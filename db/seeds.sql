@@ -1,4 +1,4 @@
-USE employee;
+USE employees;
 
 INSERT INTO department 
   (name)
@@ -21,7 +21,7 @@ VALUES
     ("Junior Developer", 9000000, 5);
 
 
-INSERT INTO employee 
+INSERT INTO employees
 (first_name, last_name, role_id, manager_id)
 VALUES 
     ("Natash", "Romanoff", 1, NULL),

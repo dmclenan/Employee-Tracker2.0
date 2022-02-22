@@ -1,12 +1,12 @@
 const { prompt } = require("inquirer");
-const db = require("./db/dbQueries");
+const db = require("./db");
 
 
 function mainMenu() {
     prompt([
         {
             type: "list",
-            Name: "choice",
+            name: "choice",
             message: "what would you like to do?",
             choices: [
                 {
@@ -127,7 +127,7 @@ function addEmployee() {
                 name: "addEmployMan"
             }
         ])
-
+    }
     function addDept() {
         inquirer
             .prompt({
@@ -135,7 +135,7 @@ function addEmployee() {
                 message: "Enter the name of the new department",
                 name: "newDept"
             })
-
+        }
         function addRole() {
             inquirer
                 .prompt([
@@ -155,7 +155,7 @@ function addEmployee() {
                         name: "roleDept"
                     }
                 ])
-
+            }
             function updateEmployeeRole() {
                 inquirer
                     .prompt([
@@ -171,10 +171,11 @@ function addEmployee() {
                         }
                     ])
 
-
+                }
                 function quit() {
                     console.log("goodbye!");
-                    Process.exit();
+                    process.exit();
                 };
 
+            
                 mainMenu();
